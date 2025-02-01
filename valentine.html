@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, Kye! 💖</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6f2;
+            padding-top: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #ff4d6d;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+        .heart {
+            color: #ff4d6d;
+            font-size: 50px;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .btn {
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #ff1e50;
+        }
+        .no-btn {
+            background-color: #999;
+        }
+        .no-btn:hover {
+            background-color: #666;
+        }
+    </style>
+    <script>
+        function sendResponse(answer) {
+            fetch('send_email.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'answer=' + encodeURIComponent(answer)
+            })
+            .then(response => response.text())
+            .then(data => alert(data))
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Valentine's Day, Kye! 💖</h1>
+        <p>You make my world brighter every day. Will you be my Valentine? 😊</p>
+        <p class="heart">❤️</p>
+        <div class="button-container">
+            <button class="btn" onclick="sendResponse('Yes')">Yes!</button>
+            <button class="btn no-btn" onclick="sendResponse('No')">No</button>
+        </div>
+    </div>
+</body>
+</html>
