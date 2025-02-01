@@ -61,21 +61,6 @@
       background-color: #666;
     }
   </style>
-  <script>
-    function sendResponse(answer) {
-      fetch('send_email.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: 'answer=' + encodeURIComponent(answer)
-      })
-      .then(response => response.text())
-      .then(data => {
-        // You can display the result in an alert or directly on the page.
-        alert(data);
-      })
-      .catch(error => console.error('Error:', error));
-    }
-  </script>
 </head>
 <body>
   <div class="container">
@@ -83,8 +68,14 @@
     <p>You make my world brighter every day. Will you be my Valentine? 😊</p>
     <p class="heart">❤️</p>
     <div class="button-container">
-      <button class="btn" onclick="sendResponse('Yes')">Yes!</button>
-      <button class="btn no-btn" onclick="sendResponse('No')">No</button>
+      <form action="https://formspree.io/f/manqjjyy" method="POST">
+        <input type="hidden" name="answer" value="Yes">
+        <button class="btn" type="submit">Yes!</button>
+      </form>
+      <form action="https://formspree.io/f/manqjjyy" method="POST">
+        <input type="hidden" name="answer" value="No">
+        <button class="btn no-btn" type="submit">No</button>
+      </form>
     </div>
   </div>
 </body>
