@@ -1,61 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Login</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #ffccd5;
-            padding-top: 100px;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            margin: auto;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        input {
-            padding: 10px;
-            width: 80%;
-            margin: 10px 0;
-            border: 1px solid #ff4d6d;
-            border-radius: 5px;
-        }
-        button {
-            background-color: #ff4d6d;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #ff1e50;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valentine's Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #ffccd5;
+      padding-top: 100px;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      margin: auto;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    input {
+      padding: 10px;
+      width: 80%;
+      margin: 10px 0;
+      border: 1px solid #ff4d6d;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #ff1e50;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Enter the Secret Code 💖</h2>
-        <input type="password" id="password" placeholder="Enter Code">
-        <button onclick="checkPassword()">Unlock</button>
-        <p id="message" style="color: red;"></p>
-    </div>
+  <div class="container">
+    <h2>Enter the Secret Code 💖</h2>
+    <input type="password" id="password" placeholder="Enter Code" />
+    <button onclick="checkPassword()">Unlock</button>
+    <p id="message" style="color: red;"></p>
+  </div>
 
-    <script>
-        function checkPassword() {
-            var password = document.getElementById('password').value;
-            if (password === "0425") {
-                window.location.href = "valentine.html";
-            } else {
-                document.getElementById('message').innerText = "Incorrect code. Try again!";
-            }
-        }
-    </script>
+  <script>
+    function checkPassword() {
+      var password = document.getElementById("password").value;
+      // Change "0425" to your desired secret code.
+      if (password === "0425") {
+        window.location.href = "valentine.html";
+      } else {
+        document.getElementById("message").innerText =
+          "Incorrect code. Try again!";
+      }
+    }
+  </script>
 </body>
 </html>
