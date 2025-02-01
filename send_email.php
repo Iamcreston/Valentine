@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve the answer from POST data
-    $answer = $_POST['answer'];
+    $answer = htmlspecialchars($_POST['answer']);
 
     // Set the recipient email address. Replace with your actual email.
     $to = "crestonharper19@gmail.com";
